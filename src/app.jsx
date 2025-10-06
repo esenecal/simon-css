@@ -11,51 +11,50 @@ import { Nav } from 'react-bootstrap';
 
 // We import app.css. Then we have this function which defines App, which will be used in index.jsx.
 export default function App() {
-  return (
-    // Note that we are just pulling this header stuff from login.html
-    <BrowserRouter>
-        <div className="body bg-dark text-light">
-            <header class="container-fluid">
-                <nav class="navbar fixed-top navbar-dark">
+// Note that we are just pulling this header stuff from login.html
+    return (
 
-                    <div className="navbar-brand">
-                        Simon<sup>&reg;</sup>
+        <BrowserRouter>
+            <div className="body bg-dark text-light">
+                <header className="container-fluid">
+                    <nav className="navbar fixed-top navbar-dark">
+                        <div className="navbar-brand">
+                            Simon<sup>&reg;</sup>
+                        </div>
+                        <menu className="navbar-nav">
+                            <li className="nav-item">
+                                <NavLink className="nav-link" to="login">Login</NavLink>
+                            </li>
+                            <li className="nav-item">
+                                <NavLink className="nav-link" to="play">Play</NavLink>
+                            </li>
+                            <li className="nav-item">
+                                <NavLink className="nav-link" to="scores">Scores</NavLink>
+                            </li>
+                            <li className="nav-item">
+                                <NavLink className="nav-link" to="about">About</NavLink>
+                            </li>
+                        </menu>
+                        </nav>
+                </header>
+
+                <Routes>
+                    <Route path="/login" element={<Login />} exact />
+                    <Route path="/play" element={<Play />} />
+                    <Route path="/scores" element={<Scores />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="*" element={<NotFound />} />
+                </Routes>
+
+                <footer class="bg-dark text-white-50">
+                    <div class="container-fluid">
+                        <span class="text-reset">Author Name(s)</span>
+                        <a class="text-reset" href="https://github.com/webprogramming260/simon-css">Source</a>
                     </div>
-                    
-                    <menu class="navbar-nav">
-                        <li class="nav-item">
-                            <NavLink className="nav-link" to="login">Login</NavLink>
-                        </li>
-                        <li class="nav-item">
-                            <NavLink className="nav-link" to="play">Play</NavLink>
-                        </li>
-                        <li class="nav-item">
-                            <NavLink className="nav-link" to="scores">Scores</NavLink>
-                        </li>
-                        <li class="nav-item">
-                            <NavLink className="nav-link" to="about">About</NavLink>
-                        </li>
-                    </menu>
-                </nav>
-            </header>
-
-            <Routes>
-                <Route path="/login" element={<Login />} exact />
-                <Route path="/play" element={<Play />} />
-                <Route path="/scores" element={<Scores />} />
-                <Route path="/about" element={<About />} />
-                <Route path="*" element={<NotFound />} />
-            </Routes>
-
-            <footer class="bg-dark text-white-50">
-                <div class="container-fluid">
-                    <span class="text-reset">Author Name(s)</span>
-                    <a class="text-reset" href="https://github.com/webprogramming260/simon-css">Source</a>
-                </div>
-            </footer>
-        </div>
-    </BrowserRouter>
-  );
+                </footer>
+            </div>
+        </BrowserRouter>
+    );
 }
 
 function NotFound() {

@@ -23,7 +23,7 @@ export default function App() {
                         </div>
                         <menu className="navbar-nav">
                             <li className="nav-item">
-                                <NavLink className="nav-link" to="login">Login</NavLink>
+                                <NavLink className="nav-link" to="">Login</NavLink>
                             </li>
                             <li className="nav-item">
                                 <NavLink className="nav-link" to="play">Play</NavLink>
@@ -39,7 +39,7 @@ export default function App() {
                 </header>
 
                 <Routes>
-                    <Route path="/login" element={<Login />} exact />
+                    <Route path="/" element={<Login />} exact />
                     <Route path="/play" element={<Play />} />
                     <Route path="/scores" element={<Scores />} />
                     <Route path="/about" element={<About />} />
